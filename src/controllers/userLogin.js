@@ -37,7 +37,7 @@ const authenticateToken = (req, res, next) => {
   if (token == null) return res.sendStatus(404);
 
   jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
-    if (err) return res.send("Invalid token").sendStatus(403);
+    if (err) return res.status(403).send("Invalid token");
     req.user = user;
     next();
   });

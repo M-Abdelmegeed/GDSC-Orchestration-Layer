@@ -11,6 +11,7 @@ const { userLogin, authenticateToken } = require("../controllers/userLogin");
 const deleteContact = require("../controllers/Contact/deleteContact");
 const deletePrescription = require("../controllers/Prescriptions/deletePrescription");
 const deleteDiagnosis = require("../controllers/Diagnosis/deleteDiagnosis");
+const editContact = require("../controllers/Contact/editContact");
 
 const router = express.Router();
 router.post("/generateOTP", generateOTP);
@@ -25,5 +26,6 @@ router.post("/getDiagnosis", authenticateToken, getDiagnosis);
 router.post("/deleteContact", authenticateToken, deleteContact);
 router.post("/deletePrescription", authenticateToken, deletePrescription);
 router.post("/deleteDiagnosis", authenticateToken, deleteDiagnosis);
+router.post("/editContact", authenticateToken, editContact);
 
 module.exports = router;
