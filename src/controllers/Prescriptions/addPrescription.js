@@ -1,5 +1,5 @@
 require("dotenv").config();
-const Prescription = require("../models/Prescription");
+const Prescription = require("../../models/Prescription");
 
 const addPrescription = async (req, res) => {
   console.log(req.user);

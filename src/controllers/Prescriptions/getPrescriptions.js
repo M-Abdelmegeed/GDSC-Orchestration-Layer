@@ -1,4 +1,4 @@
-const Prescription = require("../models/Prescription");
+const Prescription = require("../../models/Prescription");
 
 const getPrescriptions = async (req, res) => {
   const userID = req.user.id;
