@@ -1,5 +1,4 @@
 require("dotenv").config();
-const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
@@ -9,7 +8,6 @@ const userLogin = async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
   const person = await User.findOne({ email: email }).exec();
-  // console.log(person.password);
   // Encrypted passwords
   const match = bcrypt.compareSync(
     password + process.env.PEPPER,
